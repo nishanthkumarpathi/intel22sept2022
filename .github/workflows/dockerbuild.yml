@@ -41,5 +41,5 @@ jobs:
 
       - name: Manally Push
         run: |
-          docker tag nishanthkp/myfirstapp:latest nishanthkp/myfirstapp:${{GITHUB_RUN_NUMBER}}
-          docker push nishanthkp/myfirstapp:${{GITHUB_RUN_NUMBER}}
+          docker tag nishanthkp/myfirstapp:latest nishanthkp/myfirstapp:${GITHUB_RUN_NUMBER}
+          docker push nishanthkp/myfirstapp:${GITHUB_RUN_NUMBER}
