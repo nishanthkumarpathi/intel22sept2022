@@ -32,13 +32,14 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
 
-      - name: Build and Push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          context: .
-          tags: nishanthkp/myfirstapp:latest
+      # - name: Build and Push
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     push: true
+      #     context: .
+      #     tags: nishanthkp/myfirstapp:latest
 
       - name: Manally Push
         run: |
-          docker images
+          docker build -t nishanthkp/myfirstapp:${{ env.GITHUBRUNNERID }} .
+          docker push nishanthkp/myfirstapp:${{ env.GITHUBRUNNERID }}
