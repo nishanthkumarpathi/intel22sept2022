@@ -37,9 +37,9 @@ jobs:
         with:
           push: true
           context: .
-          tags: nishanthkp/myfirstapp:latest
+          tags: nishanthkp/myfirstapp:${{env.GITHUBRUNNERID}}
 
       - name: Manally Push
         run: |
-          docker tag myfirstapp:latest nishanthkp/myfirstapp:${{env.GITHUBRUNNERID}}
+          docker tag nishanthkp/myfirstapp:latest nishanthkp/myfirstapp:${{env.GITHUBRUNNERID}}
           docker push nishanthkp/myfirstapp:${{env.GITHUBRUNNERID}}
