@@ -53,4 +53,4 @@ jobs:
 
       - name: Manipulate the Kubernetes Image Version
         run: |
-          sed -i "s/APPVERSIONTOBEMODIFIED/${{ env.GITHUBRUNNERID }}/g" kubernetesfiles/myfirstap-pod.yml
+          sed -i "s/APPVERSIONTOBEMODIFIED/${{ env.GITHUBRUNNERID }}/g" kubernetesfiles/myfirstapp-pod.yml
