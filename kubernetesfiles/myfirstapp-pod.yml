@@ -6,7 +6,7 @@ metadata:
   name: myfirstapponk8s
 spec:
   containers:
-  - image: nishanthkp/myfirstapp:latest
+  - image: nishanthkp/myfirstapp:16
     name: myfirstapponk8s
     resources: {}
   dnsPolicy: ClusterFirst
