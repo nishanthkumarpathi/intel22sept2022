@@ -57,7 +57,7 @@ jobs:
           sed -i "s/APPVERSIONTOBEMODIFIED/${{ env.GITHUBRUNNERID }}/g" kubernetesfiles/myfirstapp-pod.yml
 
       - name: Commit and Push
-        uses: devops-infra/actions-commit-push@master
+        uses: devops-infra/action-commit-push@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: Version Update
