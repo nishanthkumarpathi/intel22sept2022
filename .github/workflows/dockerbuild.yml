@@ -59,7 +59,7 @@ jobs:
       - name: Commit and Push
         uses: devops-infra/action-commit-push@master
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: Version Update
 
       
