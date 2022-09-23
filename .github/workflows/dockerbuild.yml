@@ -53,6 +53,7 @@ jobs:
 
       - name: Manipulate the Kubernetes Image Version
         run: |
+          cp ktemplates/myfirstapp-template.yml kubernetesfiles/myfirstapp-pod.yml
           sed -i "s/APPVERSIONTOBEMODIFIED/${{ env.GITHUBRUNNERID }}/g" kubernetesfiles/myfirstapp-pod.yml
 
       - name: Commit and Push
