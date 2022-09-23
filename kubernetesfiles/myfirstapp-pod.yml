@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: myfirstapponk8s
+  name: myfirstapponk8s
+spec:
+  containers:
+  - image: nishanthkp/myfirstapp:latest
+    name: myfirstapponk8s
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
