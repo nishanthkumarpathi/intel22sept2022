@@ -12,7 +12,7 @@ env:
 
 jobs:
 
-  build:
+  docker-image-build:
     runs-on: ubuntu-latest
     steps:
 
@@ -42,3 +42,14 @@ jobs:
         run: |
           docker build -t nishanthkp/myfirstapp:${{ env.GITHUBRUNNERID }} .
           docker push nishanthkp/myfirstapp:${{ env.GITHUBRUNNERID }}
+
+  dev-kube-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Manipulate the Kubernetes Image Version
+        run: |
+          sed -i "s/APPVERSIONTOBEMODIFIED/${{ env.GITHUBRUNNERID }}/g" kubernetesfiles/myfirstap-pod.yml
